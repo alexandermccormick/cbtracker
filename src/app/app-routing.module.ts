@@ -7,9 +7,7 @@ import { AccountsComponent } from './pages/accounts/accounts.component';
 import { TreasuryComponent } from './pages/treasury/treasury.component';
 import { MarketComponent } from './pages/market/market.component';
 import { OptionsComponent } from './pages/options/options.component';
-import { AdblockerComponent } from './pages/adblocker/adblocker.component';
 
-import { AdblockerGuard } from './guard/adblocker.guard';
 import { DeactivateGuard } from './guard/deactivate.guard';
 
 const routes: Routes = [
@@ -23,12 +21,11 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent, canActivate: [AdblockerGuard] },
-      { path: 'accounts', component: AccountsComponent, canActivate: [AdblockerGuard] },
-      { path: 'treasury', component: TreasuryComponent, canActivate: [AdblockerGuard] },
-      { path: 'market', component: MarketComponent, canActivate: [AdblockerGuard] },
-      { path: 'options', component: OptionsComponent, canActivate: [AdblockerGuard] },
-      { path: 'adblocker', component: AdblockerComponent},
+      { path: 'home', component: HomeComponent },
+      { path: 'accounts', component: AccountsComponent },
+      { path: 'treasury', component: TreasuryComponent },
+      { path: 'market', component: MarketComponent },
+      { path: 'options', component: OptionsComponent },
       { path: '*', redirectTo: '/home', pathMatch: 'full' },
     ],
     canDeactivate: [DeactivateGuard]

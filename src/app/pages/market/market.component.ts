@@ -28,11 +28,11 @@ export class MarketComponent implements OnInit {
     minPrice: 0,
     maxPrice: 9999999999,
     nftType: '',
-    limit: 50,
+    limit: 100,
     offset: 0
   }
   clientFilter: any = {
-    limit: 10,
+    limit: 100,
     offset: 0,
     page: 0,
     pages: 1,
@@ -118,7 +118,7 @@ export class MarketComponent implements OnInit {
   ngOnInit(): void {
     this.subscribed = this.configService.subscribed
     this.subService.subscription$.subscribe((subscribed: boolean) => {
-      this.subscribed = subscribed
+      this.subscribed = true
     })
 
     this.combinedFilters = [{
