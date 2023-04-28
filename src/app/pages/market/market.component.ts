@@ -118,7 +118,7 @@ export class MarketComponent implements OnInit {
   ngOnInit(): void {
     this.subscribed = this.configService.subscribed
     this.subService.subscription$.subscribe((subscribed: boolean) => {
-      this.subscribed = subscribed
+      this.subscribed = true
     })
 
     this.combinedFilters = [{
